@@ -1,5 +1,6 @@
 package com.company.api.Test.UserClient;
 
+import com.company.api.Test.BaseTest.RequestSpecFactory;
 import com.company.api.Test.Models.PetRequest;
 import com.company.api.Test.Utils.Utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -19,8 +20,7 @@ public class PetClient {
 
         String json = Utils.getStringJsonResponse(petObj);
         Response response =  given()
-                .baseUri(baseUri)
-                .contentType("application/json")
+                .spec(RequestSpecFactory.getSpec())
                 .body(json)
                 .when()
                 .post("/pet");

@@ -1,6 +1,5 @@
 package com.company.api.Test;
 
-import com.company.api.Test.BaseTest.BaseTest;
 import com.company.api.Test.BaseTest.RequestSpecFactory;
 import com.company.api.Test.Listeners.TestListener;
 import com.company.api.Test.UserClient.UserClient;
@@ -17,8 +16,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 @Listeners({ TestListener.class})
-public class GetUserTest extends BaseTest {
-
+public class GetUserTest1 {
     @BeforeMethod
     public void setup() {
         RequestSpecFactory.initSpec(ConfigReader.get("userBaseUri"));

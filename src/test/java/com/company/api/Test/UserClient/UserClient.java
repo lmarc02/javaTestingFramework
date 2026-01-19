@@ -1,5 +1,6 @@
 package com.company.api.Test.UserClient;
 
+import com.company.api.Test.BaseTest.RequestSpecFactory;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
@@ -11,12 +12,11 @@ public class UserClient {
         this.baseUri = baseUri;
     }
 
-
-    public Response getUserClient(Integer id){
+    public Response getUserClient(Integer id) {
         Response response = given()
-                .baseUri(baseUri)
-                .contentType("application/json")
-                .when().get("/user/" + id);
+                .spec(RequestSpecFactory.getSpec())
+                .when()
+                .get("/user/" + id);
 
         return response;
     }

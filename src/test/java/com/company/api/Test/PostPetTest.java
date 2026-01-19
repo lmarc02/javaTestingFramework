@@ -1,6 +1,7 @@
 package com.company.api.Test;
 
 import com.company.api.Test.BaseTest.BaseTest;
+import com.company.api.Test.BaseTest.RequestSpecFactory;
 import com.company.api.Test.Listeners.TestListener;
 import com.company.api.Test.Models.PetCategoryRequest;
 import com.company.api.Test.Models.PetRequest;
@@ -10,10 +11,8 @@ import com.company.api.Test.Utils.ConfigReader;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -24,6 +23,15 @@ import static org.hamcrest.text.IsEmptyString.emptyOrNullString;
 
 @Listeners({ TestListener.class})
 public class PostPetTest extends BaseTest {
+    @BeforeMethod
+    public void setup() {
+        RequestSpecFactory.initSpec(ConfigReader.get("petBaseUri"));
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        RequestSpecFactory.removeSpec();
+    }
 
     @Test
     public void postPet() throws JsonProcessingException, InterruptedException {
