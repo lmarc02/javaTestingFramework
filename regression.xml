@@ -4,7 +4,7 @@
 <suite name="RegressionSuite" verbose="1" parallel="methods" thread-count="10">
 <!--    <suite name="AutomationSuite" verbose="1" parallel="false">-->
     <listeners>
-        <listener class-name="com.company.api.Test.Listeners.TestListener"/>
+        <listener class-name="com.company.api.Listeners.TestListener"/>
     </listeners>
 
     <test name="Regression">

@@ -1,12 +1,12 @@
 package com.company.api.Test;
 
-import com.company.api.Test.BaseTest.BaseTest;
-import com.company.api.Test.BaseTest.RequestSpecFactory;
-import com.company.api.Test.Listeners.TestListener;
-import com.company.api.Test.UserClient.UserClient;
-import com.company.api.Test.Utils.ConfigReader;
-import com.company.api.Test.Utils.DataProviders;
-import com.company.api.Test.Utils.PollingUtils;
+import com.company.api.BaseTest.BaseTest;
+import com.company.api.BaseTest.RequestSpecFactory;
+import com.company.api.Listeners.TestListener;
+import com.company.api.UserClient.UserClient;
+import com.company.api.Utils.ConfigReader;
+import com.company.api.Utils.DataProviders;
+import com.company.api.Utils.PollingUtils;
 import io.qameta.allure.Allure;
 import io.restassured.response.Response;
 import org.testng.annotations.AfterMethod;

@@ -1,6 +1,11 @@
-package com.company.api.Test.Models;
+package com.company.api.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class PetCategoryRequest {
     @JsonProperty("id")
     Integer id;
@@ -13,19 +18,4 @@ public class PetCategoryRequest {
         this.name = name;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

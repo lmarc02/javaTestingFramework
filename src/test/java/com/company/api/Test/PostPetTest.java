@@ -1,15 +1,14 @@
 package com.company.api.Test;
 
-import com.company.api.Test.BaseTest.BaseTest;
-import com.company.api.Test.BaseTest.RequestSpecFactory;
-import com.company.api.Test.Listeners.TestListener;
-import com.company.api.Test.Models.PetCategoryRequest;
-import com.company.api.Test.Models.PetRequest;
-import com.company.api.Test.Models.PetTagRequest;
-import com.company.api.Test.UserClient.PetClient;
-import com.company.api.Test.Utils.ConfigReader;
+import com.company.api.BaseTest.BaseTest;
+import com.company.api.BaseTest.RequestSpecFactory;
+import com.company.api.Listeners.TestListener;
+import com.company.api.Models.PetCategoryRequest;
+import com.company.api.Models.PetRequest;
+import com.company.api.Models.PetTagRequest;
+import com.company.api.UserClient.PetClient;
+import com.company.api.Utils.ConfigReader;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.annotations.*;
 

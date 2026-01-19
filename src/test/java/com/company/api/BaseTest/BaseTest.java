@@ -1,8 +1,6 @@
-package com.company.api.Test.BaseTest;
+package com.company.api.BaseTest;
 
-import com.company.api.Test.Utils.ConfigReader;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import com.company.api.Utils.ConfigReader;
 import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {

@@ -1,7 +1,6 @@
-package com.company.api.Test.UserClient;
+package com.company.api.UserClient;
 
-import com.company.api.Test.BaseTest.RequestSpecFactory;
-import com.company.api.Test.Utils.ConfigReader;
+import com.company.api.BaseTest.RequestSpecFactory;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
