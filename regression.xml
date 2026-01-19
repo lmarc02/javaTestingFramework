@@ -10,9 +10,6 @@
     <test name="Regression">
         <classes>
             <class name="com.company.api.Test.GetUserTest"/>
-            <class name="com.company.api.Test.GetUserTest1"/>
-            <class name="com.company.api.Test.GetUserTest2"/>
-            <class name="com.company.api.Test.GetUserTest3"/>
             <class name="com.company.api.Test.PostPetTest"/>
         </classes>
     </test>

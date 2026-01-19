@@ -33,85 +33,27 @@ public class PostPetTest extends BaseTest {
         RequestSpecFactory.removeSpec();
     }
 
-    @Test
+    @Test(invocationCount = 2)
     public void postPet() throws JsonProcessingException, InterruptedException {
         Thread.sleep(2000);
-        PetClient petClient = new PetClient(ConfigReader.get("petBaseUri"));
 
         PetRequest myPet = PetRequest.builder()
                 .id(1)
                 .name("Max")
-                .petCategoryRequest(new PetCategoryRequest(1, "Dog"))
+                .petCategoryRequest(PetCategoryRequest
+                        .builder()
+                        .id(1)
+                        .name("Dog")
+                        .build())
                 .photoUrls(List.of("category string"))
-                .petTagRequests(List.of(new PetTagRequest(1, "tag string")))
+                .petTagRequests(List.of(PetTagRequest
+                        .builder()
+                        .id(1).name("tag string")
+                        .build()))
                 .status("true")
                 .build();
 
-        Response response = petClient.createPet(myPet);
-                response.then()
-                        .statusCode(200)
-                        .body("id", not(emptyOrNullString()))
-                        .body("name", equalTo("Max"))
-                        .body("tags.name[0]", equalTo("tag string"));
-    }
-
-    @Test
-    public void postPet2() throws JsonProcessingException, InterruptedException {
-        Thread.sleep(2000);
-        PetClient petClient = new PetClient(ConfigReader.get("petBaseUri"));
-
-        PetRequest myPet = PetRequest.builder()
-                .id(1)
-                .name("Max")
-                .petCategoryRequest(new PetCategoryRequest(1, "Dog"))
-                .photoUrls(List.of("category string"))
-                .petTagRequests(List.of(new PetTagRequest(1, "tag string")))
-                .status("true")
-                .build();
-
-                Response response = petClient.createPet(myPet);
-                response.then()
-                        .statusCode(200)
-                        .body("id", not(emptyOrNullString()))
-                        .body("name", equalTo("Max"))
-                        .body("tags.name[0]", equalTo("tag string"));
-    }
-    @Test
-    public void postPet3() throws JsonProcessingException, InterruptedException {
-        Thread.sleep(2000);
-        PetClient petClient = new PetClient(ConfigReader.get("petBaseUri"));
-
-        PetRequest myPet = PetRequest.builder()
-                .id(1)
-                .name("Max")
-                .petCategoryRequest(new PetCategoryRequest(1, "Dog"))
-                .photoUrls(List.of("category string"))
-                .petTagRequests(List.of(new PetTagRequest(1, "tag string")))
-                .status("true")
-                .build();
-
-                Response response = petClient.createPet(myPet);
-                response.then()
-                        .statusCode(200)
-                        .body("id", not(emptyOrNullString()))
-                        .body("name", equalTo("Max"))
-                        .body("tags.name[0]", equalTo("tag string"));
-    }
-    @Test
-    public void postPet4() throws JsonProcessingException, InterruptedException {
-        Thread.sleep(2000);
-        PetClient petClient = new PetClient(ConfigReader.get("petBaseUri"));
-
-        PetRequest myPet = PetRequest.builder()
-                .id(1)
-                .name("Max")
-                .petCategoryRequest(new PetCategoryRequest(1, "Dog"))
-                .photoUrls(List.of("category string"))
-                .petTagRequests(List.of(new PetTagRequest(1, "tag string")))
-                .status("true")
-                .build();
-
-                Response response = petClient.createPet(myPet);
+        Response response = PetClient.createPet(myPet);
                 response.then()
                         .statusCode(200)
                         .body("id", not(emptyOrNullString()))

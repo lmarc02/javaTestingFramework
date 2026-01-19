@@ -6,13 +6,8 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 
 public class UserClient {
-    private final String baseUri;
 
-    public UserClient(String baseUri) {
-        this.baseUri = baseUri;
-    }
-
-    public Response getUserClient(Integer id) {
+    public static Response getUserClient(Integer id) {
          String xApiKey = System.getProperty("xApiKey");
         Response response = given()
                 .spec(RequestSpecFactory.getSpec())
