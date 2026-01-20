@@ -13,4 +13,14 @@ public class DataProviders {
         };
     }
 
+    @DataProvider(name = "invalidUserIds")
+    public Object[][] invalidUserIds() {
+        return new Object[][]{
+                {-100, "Negative ID"},
+                {-1, "Negative one"},
+                {0, "Zero ID"},
+                {999999, "Non-existent large ID"}
+        };
+    }
+
 }

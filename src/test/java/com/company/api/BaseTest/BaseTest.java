@@ -1,9 +1,11 @@
 package com.company.api.BaseTest;
 
 import com.company.api.Utils.ConfigReader;
+import io.restassured.response.Response;
 import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {
+    ThreadLocal<Response> response = new ThreadLocal<>();
 
     @BeforeSuite
     public void suiteSetup() {
