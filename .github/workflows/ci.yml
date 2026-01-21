@@ -23,7 +23,7 @@ jobs:
 
       - name: Run TestNG tests
         run: |
-          mvn clean test mvn clean test -DsuiteXmlFile=regression.xml -DxApiKey=your-secret-api-keyname
+          mvn clean test -DsuiteXmlFile=regression.xml -DxApiKey=your-secret-api-key
 
       - name: Upload Surefire TestNG reports
         if: always()
