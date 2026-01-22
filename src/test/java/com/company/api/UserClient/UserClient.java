@@ -13,7 +13,7 @@ public class UserClient {
     public static Response getUserClient(Integer id) {
          String xApiKey = System.getProperty("xApiKey");
 
-        Response response = given()
+        Response response = given().log().all()
                 .spec(RequestSpecFactory.getSpec())
                 .header("x-api-key", xApiKey)
                 .when()
@@ -23,7 +23,7 @@ public class UserClient {
     }
 
     public static Response getUserClient(Integer id, String xApiKey) {
-        Response response = given()
+        Response response = given().log().all()
                 .spec(RequestSpecFactory.getSpec())
                 .header("x-api-key", xApiKey)
                 .when()

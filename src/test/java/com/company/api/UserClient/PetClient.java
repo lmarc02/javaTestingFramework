@@ -13,7 +13,7 @@ public  class PetClient {
     public static Response createPet(PetRequest petObj) throws JsonProcessingException {
 
         String json = Utils.getStringJsonResponse(petObj);
-        Response response =  given()
+        Response response =  given().log().all()
                 .spec(RequestSpecFactory.getSpec())
                 .body(json)
                 .when()
