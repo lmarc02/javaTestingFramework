@@ -23,7 +23,7 @@ jobs:
 
       - name: Run TestNG tests
         run: |
-          mvn clean test -DsuiteXmlFile=petSuite.xml
+          mvn clean test -DsuiteXmlFile=regression.xml
 
       - name: Generate Allure report
         if: always()
