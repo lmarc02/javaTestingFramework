@@ -6,7 +6,6 @@ import com.company.api.listeners.TestListener;
 import com.company.api.client.UserClient;
 import com.company.api.utils.ConfigReader;
 import com.company.api.utils.DataProviders;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;

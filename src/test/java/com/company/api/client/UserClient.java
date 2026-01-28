@@ -7,6 +7,7 @@ import io.qameta.allure.Allure;
 import io.restassured.response.Response;
 
 import java.time.Duration;
+import java.util.logging.Logger;
 
 import static io.restassured.RestAssured.given;
 
@@ -15,7 +16,8 @@ public class UserClient {
     public static Response getUserClient(Integer id) {
 
         Response response = getUserClient(id, EnvReader.getApiKey());
-        System.out.println(response.body().prettyPrint());
+
+        Logger.getLogger(response.body().prettyPrint());
         Allure.addAttachment("Response Body", "application/json", response.body().prettyPrint());
 
 
@@ -29,7 +31,8 @@ public class UserClient {
                 .log().all()
                 .when()
                 .get("/user/" + id);
-        System.out.println(response.body().prettyPrint());
+
+        Logger.getLogger(response.body().prettyPrint());
         Allure.addAttachment("Response Body", "application/json", response.body().prettyPrint());
 
         return response;
