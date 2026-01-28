@@ -14,8 +14,9 @@ public  class PetClient {
     public static Response createPet(PetRequest petObj) throws JsonProcessingException {
 
         String json = Utils.getStringJsonResponse(petObj);
-        Response response =  given().log().all()
+        Response response =  given()
                 .spec(RequestSpecFactory.getSpec())
+                .log().all()
                 .body(json)
                 .when()
                 .post("/pet");

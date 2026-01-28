@@ -3,7 +3,6 @@ package com.company.api.client;
 import com.company.api.baseTest.RequestSpecFactory;
 import com.company.api.utils.EnvReader;
 import com.company.api.utils.PollingUtils;
-import io.github.cdimascio.dotenv.Dotenv;
 import io.qameta.allure.Allure;
 import io.restassured.response.Response;
 
@@ -15,11 +14,7 @@ public class UserClient {
 
     public static Response getUserClient(Integer id) {
 
-        Response response = given().log().all()
-                .spec(RequestSpecFactory.getSpec())
-                .header("x-api-key", EnvReader.getApiKey())
-                .when()
-                .get("/user/" + id);
+        Response response = getUserClient(id, EnvReader.getApiKey());
         System.out.println(response.body().prettyPrint());
         Allure.addAttachment("Response Body", "application/json", response.body().prettyPrint());
 
@@ -28,9 +23,10 @@ public class UserClient {
     }
 
     public static Response getUserClient(Integer id, String xApiKey) {
-        Response response = given().log().all()
+        Response response = given()
                 .spec(RequestSpecFactory.getSpec())
                 .header("x-api-key", xApiKey)
+                .log().all()
                 .when()
                 .get("/user/" + id);
         System.out.println(response.body().prettyPrint());
