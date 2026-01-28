@@ -10,6 +10,9 @@ public class EnvReader {
         if (key == null || key.isEmpty()) {
             key = dotenv.get("X_API_KEY");
         }
+        if (key == null || key.isEmpty()) {
+            throw new IllegalStateException("API key not found. Set 'xApiKey' system property or 'X_API_KEY' in .env file.");
+        }
         return key;
     }
 }
