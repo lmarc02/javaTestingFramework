@@ -1,7 +1,9 @@
 package com.company.api.client;
 
 import com.company.api.baseTest.RequestSpecFactory;
+import com.company.api.utils.EnvReader;
 import com.company.api.utils.PollingUtils;
+import io.github.cdimascio.dotenv.Dotenv;
 import io.qameta.allure.Allure;
 import io.restassured.response.Response;
 
@@ -12,11 +14,10 @@ import static io.restassured.RestAssured.given;
 public class UserClient {
 
     public static Response getUserClient(Integer id) {
-         String xApiKey = System.getProperty("xApiKey");
 
         Response response = given().log().all()
                 .spec(RequestSpecFactory.getSpec())
-                .header("x-api-key", xApiKey)
+                .header("x-api-key", EnvReader.getApiKey())
                 .when()
                 .get("/user/" + id);
         System.out.println(response.body().prettyPrint());
