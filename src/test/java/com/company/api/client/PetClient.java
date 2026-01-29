@@ -2,7 +2,7 @@ package com.company.api.client;
 
 import com.company.api.baseTest.RequestSpecFactory;
 import com.company.api.models.PetRequest;
-import com.company.api.utils.Utils;
+import com.company.test.utils.Utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.qameta.allure.Allure;
 import io.restassured.response.Response;

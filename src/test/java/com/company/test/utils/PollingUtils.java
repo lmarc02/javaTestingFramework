@@ -1,4 +1,4 @@
-package com.company.api.utils;
+package com.company.test.utils;
 
 import java.time.Duration;
 import java.time.Instant;

@@ -1,13 +1,13 @@
-package com.company.api.test;
+package com.company.test;
 
 import com.company.api.baseTest.BaseTest;
 import com.company.api.baseTest.RequestSpecFactory;
-import com.company.api.listeners.TestListener;
+import com.company.test.listeners.TestListener;
 import com.company.api.models.PetCategoryRequest;
 import com.company.api.models.PetRequest;
 import com.company.api.models.PetTagRequest;
 import com.company.api.client.PetClient;
-import com.company.api.utils.ConfigReader;
+import com.company.test.utils.ConfigReader;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.qameta.allure.Allure;
 import io.restassured.response.Response;

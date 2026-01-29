@@ -1,11 +1,11 @@
-package com.company.api.test;
+package com.company.test;
 
 import com.company.api.baseTest.BaseTest;
 import com.company.api.baseTest.RequestSpecFactory;
-import com.company.api.listeners.TestListener;
+import com.company.test.listeners.TestListener;
 import com.company.api.client.UserClient;
-import com.company.api.utils.ConfigReader;
-import com.company.api.utils.DataProviders;
+import com.company.test.utils.ConfigReader;
+import com.company.test.utils.DataProviders;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;

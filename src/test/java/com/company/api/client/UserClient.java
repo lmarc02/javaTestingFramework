@@ -1,8 +1,8 @@
 package com.company.api.client;
 
 import com.company.api.baseTest.RequestSpecFactory;
-import com.company.api.utils.EnvReader;
-import com.company.api.utils.PollingUtils;
+import com.company.test.utils.EnvReader;
+import com.company.test.utils.PollingUtils;
 import io.qameta.allure.Allure;
 import io.restassured.response.Response;
 
